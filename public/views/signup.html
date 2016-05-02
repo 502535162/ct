@@ -1,0 +1,169 @@
+<!-- Header Starts -->
+<appheader></appheader>
+<!-- Header Ends -->
+
+<div class="container main-container">
+	<div class="col-md-offset-1 col-md-11">
+		<form id="signUpForm" class="xform">
+			<div class="ui-box ui-box-has-header box-style-tex box-arrow" id="signup">
+				<div class="ui-box-heading"><h1 class="ui-box-heading-title" title="This page is secure">Sign Up</h1> <span class="signupLogin">Already have an account? <a href="/signIn?r=yIW8C" rel="0">Log In</a></span></div>
+				<div class="ui-box-content">
+					<div class="alert alert-danger" ng-if="signupAlert">
+						{{signupAlert}}
+					</div>
+					<fieldset>
+						<div class="col-2 "> 
+							<div class="col"> 
+								<div class="xform-row">
+									<label for="nqIXg" class="form-label">Your First Name</label>
+									<div class="form-data">
+										<input id="nqIXg" ng-model="details.firstname" tabindex="1" autofocus="autofocus" type="text" maxlength="60">
+									</div>
+								</div> 
+							</div> 
+							<div class="col"> 
+								<div class="xform-row">
+									<label for="lname" class="form-label">Your Last Name</label>
+									<div class="form-data">
+										<input id="lname" ng-model="details.lastname" tabindex="1" type="text" value="" maxlength="60">
+									</div>
+								</div> 
+							</div> 
+						</div>
+						<div class="col-2 "> 
+							<div class="col"> 
+								<div class="xform-row">
+									<label for="nqIXg" class="form-label">Email Address</label>
+									<div class="form-data">
+										<input id="nqIXg" ng-model="details.email" tabindex="1" autofocus="autofocus" type="text" value="" maxlength="60">
+									</div>
+								</div> 
+							</div> 
+							<div class="col"> 
+								<div class="xform-row">
+									<label for="lname" class="form-label">Contact Number</label>
+									<div class="form-data">
+										<input id="lname" ng-model="details.mobile" tabindex="1" type="text" value="" maxlength="60">
+									</div>
+								</div> 
+							</div> 
+						</div>
+						<div class="col-2 "> 
+							<div class="col"> 
+								<div class="xform-row">
+									<label for="nqIXg" class="form-label">Create Password</label>
+									<div class="form-data">
+										<input id="nqIXg" ng-model="details.password" tabindex="1" autofocus="autofocus" type="password" value="" maxlength="60">
+									</div>
+								</div> 
+							</div> 
+							<div class="col"> 
+								<div class="xform-row">
+									<label for="lname" class="form-label">Re-Enter Password</label>
+									<div class="form-data">
+										<input id="lname" ng-model="details.cnfpassword" tabindex="1" type="password" value="" maxlength="60">
+									</div>
+								</div> 
+							</div> 
+						</div>
+					</fieldset>
+					<div class="signup-cta-wrapper"> 
+						<div class="signup-cta"> 
+							<span class="terms-of-service">
+								By clicking on "I agree" you are agreeing to Xoom's <a tabindex="4" href="/user-agreement" rel="external" target="_blank">User Agreement</a> and <a tabindex="5" href="/privacy-policy" rel="external" target="_blank">Privacy Policy</a>.
+							</span> 
+							<div class="action-container"> 
+								<div id="iAgree-cta" class="cta-container continueBtn action-secure">
+									<div class="cta-container-content">
+										<button type="submit" id="iAgree" class="ui-action-tag action-primary" tabindex="1" ng-click="submitsignupform()">
+											<span class="ui-action">
+											<span class="ui-action-content">I Agree, Create Free Account</span></span>
+										</button>
+									</div>
+								</div> 
+							</div> 
+						</div> 
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<footer class="main-footer">
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<h4>Partners</h4>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-12">
+					<h4>Services</h4>
+					<ul class="list-unstyled">
+						<li><a href="#"><i class="fa fa-angle-right"></i> Basic Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Super Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Women Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Individual Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Physiotherapy</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Tests & Profiles</a><1/li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Nursing</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Top 10</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Best Deels</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-xs-12">
+					<!-- Testimonials Starts -->
+					<h4 class="side-heading1">Testimonials</h4>
+					<div id="testimonial-carousel" class="testimonial-box carousel" data-ride="carousel">
+					<!-- Indicators Starts -->
+						<ol class="carousel-indicators">
+							<li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="1"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="2"></li>
+						</ol>
+					<!-- Indicators Ends -->
+					<!-- Wrapper For Slides Starts -->
+						<div class="carousel-inner quote-box" role="listbox">
+							<i class="fa fa-quote-left fa-2x"></i>
+						<!-- Quote #1 Starts -->
+							<div class="item active">
+								<blockquote>
+									Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+								</blockquote>
+								<div class="quote-footer">
+									Jeniffier Loppax<br>
+									<span>Female, 45 Years</span>
+								</div>
+							</div>
+						<!-- Quote #1 Ends -->
+						<!-- Quote #2 Starts -->
+							<div class="item">
+								<blockquote>
+									Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit.
+								</blockquote>
+								<div class="quote-footer">
+									Sam Pobbel<br>
+									<span>Male, 36 Years</span>
+								</div>
+							</div>
+						<!-- Quote #2 Ends -->
+						<!-- Quote #3 Starts -->
+							<div class="item">
+								<blockquote>
+									Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+								</blockquote>
+								<div class="quote-footer">
+									Jenny Hoter<br>
+									<span>Female, 29 Years</span>
+								</div>		
+							</div>
+						<!-- Quote #3 Ends -->
+						</div>
+					<!-- Wrapper For Slides Ends -->
+					</div>
+				<!-- Testimonials Ends -->
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

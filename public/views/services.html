@@ -1,0 +1,331 @@
+<appheader></appheader>
+
+<div>
+<!-- Breadcrumb Starts -->
+	<div class="breadcrumb" ng-init="servicesLoad()">
+		<div class="container">
+			<ul class="list-unstyled list-inline">
+				<li><a ui-sref="home">Home</a></li>
+				<li>Services</li>
+			</ul>
+		</div>
+	</div>		
+	<!-- Breadcrumb Ends -->
+	<div class="container main-container services">
+		<div class="row">
+			<div class="col-md-3 col-xs-12 sidebar">
+				<ul class="list-style-1">
+					<li><a href="">Doctors</a></li>
+					<li><a href="" ng-click="healthcheckups()">Health Checkup</a></li>
+					<li><a href="">Reports</a></li>
+					<li><a href="">Nursing</a></li>
+					<li><a href="">Physiotheraphy</a></li>
+					<li><a href="">Contact Us</a></li>
+				</ul>
+			</div>
+			<div class="col-md-8 col-xs-12 rightcol">
+				<div class="tabs-wrap" ng-if="isHealthCheckup == true">
+					<ul class="nav nav-tabs" style="">
+						<li class="" ng-repeat="tab in tabs" ng-class="{active:$index == selTabindex}" ng-click="getSelTabindex($index, tabs)">
+							<a ng-href="{{$index}}" data-target="#{{$index}}" aria-controls="" data-toggle="tab">
+								<h5>{{tab.title}}</h5>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="tab-content" ng-if="isHealthCheckup == true">
+					<div ng-attr-id="{{$index}}" class="tab-pane fade in" ng-class="{active:$index == selTabindex}" ng-repeat="tab in tabs">
+						<div class="panel-group" ng-attr-id="accordion{{$index}}" ng-if="!tab.isWdeals">
+							<div class="panel panel-default">
+								<div class="panel-heading panel-services">
+									<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{{$index}}" href="" data-target="#{{tab.index1}}">
+											Tests Info 
+										</a>
+										<!-- <i class="indicator fa fa-chevron-down  pull-right"></i> -->
+									</h4>
+							    </div>
+							    <div ng-attr-id="{{tab.index1}}" class="panel-collapse collapse in">
+							    	<div class="panel-body">
+							        	<div class="list-group-item" ng-repeat="test in tests" ng-if="tab.islist == false">
+											<a href="" data-toggle="collapse" data-target="#test{{tab.title}}{{$index}}">{{test.Test_name}}</a>
+											<div ng-attr-id="test{{tab.title}}{{$index}}" class="collapse">
+												{{test.Description}}
+											</div>
+							        	</div>
+
+							        	<div ng-if="tab.islist == true">
+							        		<div class="col-md-6" style="margin-bottom:32px;">
+							        			<label class="form-label">Select Your Profiles</label>
+								        		<multiple-autocomplete ng-model="selProfiles" object-property="Profile_Name"
+								        		suggestions-arr="profiles">
+								        		</multiple-autocomplete>
+							        		</div>
+							        		<div class="col-md-6" style="margin-bottom:32px;">
+							        			<label class="form-label">Select Your Tests</label>
+								        		<multiple-autocomplete ng-model="selTests" object-property="Test_Name"
+								        		suggestions-arr="indtests">
+								        		</multiple-autocomplete>
+							        		</div>
+							        	</div>
+
+							        	<div class="centered" style="margin-top:30px; text-align:center;">
+										    <button class="btn btn-large btn-primary" type="button" ng-click="nextaccordion(tab.index1, tab.index2)">Next</button>
+										</div>
+							        </div>
+							    </div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading panel-services">
+									<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{{$index}}" href="" data-target="#{{tab.index2}}">
+											Patient Details
+										</a>
+										<!-- <i class="indicator fa fa-chevron-up  pull-right"></i> -->
+									</h4>
+								</div>
+								<div ng-attr-id="{{tab.index2}}" class="panel-collapse collapse">
+									<div class="panel-body">
+										<form id="signUpForm" class="xform">
+											<div class="ui-box-content">
+												<fieldset>
+													<div class="col-2 "> 
+														<div class="col"> 
+															<div class="xform-row">
+																<label for="nqIXg" class="form-label">Patient First Name</label>
+																<div class="form-data">
+																	<input autofocus="autofocus" type="text" value=""alt="Your First Name" ng-model="pDetails.firstname">
+																</div>
+															</div> 
+														</div> 
+														<div class="col"> 
+															<div class="xform-row">
+																<label for="lname" class="form-label">Patient Last Name</label>
+																<div class="form-data">
+																	<input type="text" value="" alt="Your Last Name" ng-model="pDetails.lastname">
+																</div>
+															</div> 
+														</div> 
+													</div>
+													<div class="col-2 "> 
+														<div class="col"> 
+															<div class="xform-row">
+																<label for="nqIXg" class="form-label">Gender</label>
+																<div class="form-data">
+																    <select class="form-control beta" ng-model="pDetails.gender" ng-options="i.name for i in items">
+															      	</select>
+																</div>
+															</div> 
+														</div> 
+														<div class="col"> 
+															<div class="xform-row">
+																<label for="lname" class="form-label">Contact Number</label>
+																<div class="form-data">
+																	<input type="number" ng-model="pDetails.mobile" min="0">
+																</div>
+															</div> 
+														</div> 
+													</div>
+													<div class="col-2 "> 
+														<div class="col"> 
+															<div class="xform-row">
+																<label for="nqIXg" class="form-label">Age</label>
+																<input id="lname" ng-model="pDetails.age" type="number" min="0" max="100">
+															</div> 
+														</div>
+														<div class="col"> 
+															<div class="form-data">
+																<br>
+																<form role="form">
+																	<label class="radio-inline">
+																		<input type="radio" name="optradio" ng-model="pDetails.venue" value="sCollection">Sample Collection
+																	</label>
+																	<label class="radio-inline">
+																		<input type="radio" name="optradio" ng-model="pDetails.venue" value="inPerson">In Person
+																	</label>
+																</form>
+															</div>
+														</div>
+													</div>
+													<div class="col-2 " ng-if="pDetails.venue == 'sCollection' "> 
+														<div class="col"> 
+															<div class="xform-row">
+																<label for="nqIXg" class="form-label">Patient Address</label>
+																<input id="lname" type="text" ng-model="pDetails.pAddress">
+															</div> 
+														</div> 
+														<div class="col"> 
+															<div class="xform-row">
+																<label for="lname" class="form-label">Choose Date and Time</label>
+																<div class="form-data">
+																	<a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="" href="">
+																		<div class="input-group date">
+																			<input type="text" class="form-control" data-ng-model="pDetails.ldt">
+																			<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+																		</div>
+																	</a>
+																	<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+																		<datetimepicker data-ng-model="pDetails.ldt" data-datetimepicker-config="{ dropdownSelector: '#dropdown2'}" data-before-render="beforeRenderEndDate($view, $dates, $leftDate, $upDate, $rightDate)"/>
+																	</ul>
+																</div>
+															</div> 
+														</div> 
+													</div>
+
+													<div class="col-2" ng-if="pDetails.venue == 'inPerson' ">
+														
+															<div class="xform-row">
+																<label class="form-label">Do You Want Transport?
+																	<input type="checkbox" value="pDetails.isTransport" ng-model="pDetails.isTransport">
+																</label>
+															</div>
+													</div>
+
+													<div class="col-2" ng-if="pDetails.isTransport == true"> 
+														<div class="col"> 
+															<div class="xform-row">
+																<label for="nqIXg" class="form-label">Pickup Address</label>
+																<input id="lname" type="text" ng-model="pDetails.pickupAddress">
+															</div> 
+														</div> 
+														<div class="col"> 
+															<div class="xform-row">
+																<label for="lname" class="form-label">Choose Date and Time</label>
+																<div class="form-data">
+																	<a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="" href="">
+																		<div class="input-group date">
+																			<input type="text" class="form-control" data-ng-model="pDetails.pickupTime">
+																			<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+																		</div>
+																	</a>
+																	<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+																		<datetimepicker data-ng-model="pDetails.pickupTime" data-datetimepicker-config="{ dropdownSelector: '#dropdown2'}" data-before-render="beforeRenderEndDate($view, $dates, $leftDate, $upDate, $rightDate)"/>
+																	</ul>
+																</div>
+															</div> 
+														</div>  
+													</div>
+												</fieldset>
+											</div>
+										</form>
+										<div class="centered" style="margin-top:30px; text-align:center;">
+										    <button class="btn btn-large btn-primary" type="button" ng-click="nextaccordion(tab.index2, tab.index3)">Next</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+							    <div class="panel-heading panel-services">
+							    	<h4 class="panel-title">
+							    		<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion{{$index}}" href="" data-target="#{{tab.index3}}">
+							        	  	Checkout Form
+							        	</a>
+							        	<!-- <i class="indicator fa fa-chevron-up pull-right"></i> -->
+							      	</h4>
+							    </div>
+							    <div ng-attr-id="{{tab.index3}}" class="panel-collapse collapse">
+							    	<div class="panel-body">
+							        	<div class="centered" style="margin-top:30px; margin-bottom:30px; text-align:center;">
+										    <div class="row text-center" style="margin-bottom:30px;">
+												<div class="col-xs-3">
+													<h4><small>{{tab.title}}</small></h4>
+												</div>
+												<div class="col-xs-5">
+													<h4 class="">Total <strong>$50.00</strong></h4>
+												</div>
+												<div class="col-xs-3" style="margin:5px;">
+													<button type="button" class="btn btn-success btn-block">
+														Checkout
+													</button>
+												</div>
+											</div>
+											<button class="btn btn-large btn-primary" type="button" ng-click="nextaccordion(tab.index3, tab.index1)">Next</button>
+										</div>
+							        </div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="main-footer">
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<h4>Partners</h4>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-12">
+					<h4>Services</h4>
+					<ul class="list-unstyled">
+						<li><a href="#"><i class="fa fa-angle-right"></i> Basic Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Super Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Women Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Individual Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Physiotherapy</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Tests & Profiles</a><1/li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Nursing</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Top 10</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Best Deels</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-xs-12">
+					<!-- Testimonials Starts -->
+					<h4 class="side-heading1">Testimonials</h4>
+					<div id="testimonial-carousel" class="testimonial-box carousel" data-ride="carousel">
+					<!-- Indicators Starts -->
+						<ol class="carousel-indicators">
+							<li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="1"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="2"></li>
+						</ol>
+					<!-- Indicators Ends -->
+					<!-- Wrapper For Slides Starts -->
+						<div class="carousel-inner quote-box" role="listbox">
+							<i class="fa fa-quote-left fa-2x"></i>
+						<!-- Quote #1 Starts -->
+							<div class="item active">
+								<blockquote>
+									Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+								</blockquote>
+								<div class="quote-footer">
+									Jeniffier Loppax<br>
+									<span>Female, 45 Years</span>
+								</div>
+							</div>
+						<!-- Quote #1 Ends -->
+						<!-- Quote #2 Starts -->
+							<div class="item">
+								<blockquote>
+									Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit.
+								</blockquote>
+								<div class="quote-footer">
+									Sam Pobbel<br>
+									<span>Male, 36 Years</span>
+								</div>
+							</div>
+						<!-- Quote #2 Ends -->
+						<!-- Quote #3 Starts -->
+							<div class="item">
+								<blockquote>
+									Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+								</blockquote>
+								<div class="quote-footer">
+									Jenny Hoter<br>
+									<span>Female, 29 Years</span>
+								</div>		
+							</div>
+						<!-- Quote #3 Ends -->
+						</div>
+					<!-- Wrapper For Slides Ends -->
+					</div>
+				<!-- Testimonials Ends -->
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

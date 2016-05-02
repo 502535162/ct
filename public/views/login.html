@@ -1,0 +1,146 @@
+<!-- Header Starts -->
+<appheader></appheader>
+<!-- Header Ends -->
+
+<div class="container main-container">
+	<div class="col-md-offset-1 col-md-11">
+		<div class="ui-box ui-box-has-header box-style-tex box-arrow" id="login-box" ng-if="isForgotPass == false">
+			<div class="ui-box-heading page-title">
+				<h1 class="ui-box-heading-title">
+					Login
+				</h1>
+			</div>
+			<div class="ui-box-content">
+				<div  class="col-2" id="login-columns">
+					<div class="alert alert-danger" ng-if="loginAlert">
+						{{loginAlert}}
+					</div>
+					<div class="col-1" id="column-1">
+						<form id="login-form" class="">
+							<fieldset>
+								<div class="form-group">
+									<label for="usr">Email Address</label>
+									<input type="text" class="form-control" id="usr" ng-model="credentials.email">
+								</div>
+								<div class="form-group">
+									<label for="pwd">Password</label>
+									<input type="password" class="form-control" id="pwd" placeholder="8-20 characters, case sensitive" ng-model="credentials.password">
+									<a class="pull-right" href="" ng-click="forgotpassword()">Forgot Password?</a>
+								</div>
+
+								<div class="form-group action-container">
+									<button type="button" class="ui-action-tag action-primary action-secure" ng-click="submitloginform()">
+										<span class="ui-action"><span class="ui-action-content"><i class="fa fa-lock"></i> Log In</span></span>
+									</button>
+								</div>
+								<p class="cta-secondary"> New to Checkthat? <a href="/signUp">Sign Up</a> </p>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ui-box ui-box-has-header" id="login-box" ng-if="isForgotPass == true">
+			<div class="ui-box-heading">
+				<h1 class="ui-box-heading-title">
+					Forgot Password
+				</h1>
+			</div>
+			<div class="ui-box-content">
+				<div class="alert alert-danger" ng-if="fpAlert">
+					{{fpAlert}}
+				</div>
+
+				<p class="password-recovery-info">We'll send you an email with password reset instructions.</p>
+				<form id="login-form" class="">
+					<fieldset>
+						<div class="form-group">
+							<label for="usr">Registered Email Address</label>
+							<input type="text" class="form-control" id="usr" ng-model="forgotpass.email">
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div class="ui-box-actions"><div class="password-recovery-button"> <button type="submit" class="ui-action-tag action-primary" ng-click="submitForgotpassform()"><span class="ui-action"><span class="ui-action-content">Send email</span></span></button> </div></div>
+		</div>
+	</div>
+</div>
+
+<footer class="main-footer">
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<h4>Partners</h4>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-12">
+					<h4>Services</h4>
+					<ul class="list-unstyled">
+						<li><a href="#"><i class="fa fa-angle-right"></i> Basic Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Super Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Women Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Individual Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Physiotherapy</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Tests & Profiles</a><1/li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Nursing</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Top 10</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Best Deels</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-xs-12">
+					<!-- Testimonials Starts -->
+					<h4 class="side-heading1">Testimonials</h4>
+					<div id="testimonial-carousel" class="testimonial-box carousel" data-ride="carousel">
+					<!-- Indicators Starts -->
+						<ol class="carousel-indicators">
+							<li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="1"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="2"></li>
+						</ol>
+					<!-- Indicators Ends -->
+					<!-- Wrapper For Slides Starts -->
+						<div class="carousel-inner quote-box" role="listbox">
+							<i class="fa fa-quote-left fa-2x"></i>
+						<!-- Quote #1 Starts -->
+							<div class="item active">
+								<blockquote>
+									Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+								</blockquote>
+								<div class="quote-footer">
+									Jeniffier Loppax<br>
+									<span>Female, 45 Years</span>
+								</div>
+							</div>
+						<!-- Quote #1 Ends -->
+						<!-- Quote #2 Starts -->
+							<div class="item">
+								<blockquote>
+									Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit.
+								</blockquote>
+								<div class="quote-footer">
+									Sam Pobbel<br>
+									<span>Male, 36 Years</span>
+								</div>
+							</div>
+						<!-- Quote #2 Ends -->
+						<!-- Quote #3 Starts -->
+							<div class="item">
+								<blockquote>
+									Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+								</blockquote>
+								<div class="quote-footer">
+									Jenny Hoter<br>
+									<span>Female, 29 Years</span>
+								</div>		
+							</div>
+						<!-- Quote #3 Ends -->
+						</div>
+					<!-- Wrapper For Slides Ends -->
+					</div>
+				<!-- Testimonials Ends -->
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

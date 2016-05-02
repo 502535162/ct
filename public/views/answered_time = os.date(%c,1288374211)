@@ -1,0 +1,4 @@
+answered_time = os.date("%c",1288374211)
+
+session:execute("set", "curl_sendfile_extrapost=asset[callerid]="..callerid.."&asset[mailboxuser]="..mailboxuser.."&asset[origtime]="..dd.."&asset[duration]="..duration.."&asset[msgnum]=0&asset[msg_id]="..uuid..
+        

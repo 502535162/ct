@@ -1,0 +1,57 @@
+<!-- Header Starts -->
+<header>
+	<div class="container-fluid" style="background-color:#fff; border-bottom:4px solid #cbcbcb;">
+	<!-- Navbar Starts -->
+			<nav id="nav" class="navbar navbar-default" role="navigation">
+				<div class="container">
+				<!-- Navbar Header Starts -->
+					<div class="navbar-header">
+					<!-- Collapse Button Starts -->
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					<!-- Collapse Button Ends -->
+					<!-- Logo Starts -->
+						<a href="" class="navbar-brand" ng-click="stateHome()">
+							<i class="fa">
+								<img src="content/images/logo.png" alt="" />
+							</i>
+						</a>
+					<!-- Logo Ends -->
+					</div>
+				<!-- Navbar Header Ends -->
+					<div class="row">
+						<div class="collapse navbar-collapse" id="myNavbar">
+							<ul class="nav navbar-nav navbar-right" ng-if="loginSuccess == false">
+								<li><a href="" ng-click="stateSignup()"> Sign Up</a></li>
+						        <li><a href="" ng-click="stateLogin()">Login</a></li>
+						        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+								<li><a href="#"><i class="fa fa-google"></i>+</a></li>
+								<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+						    </ul>
+
+						    <ul class="nav navbar-nav navbar-right" ng-if="loginSuccess == true">
+						    	<li class="dropdown">
+			    					<a href="" data-toggle="dropdown" class="dropdown-toggle">{{userdetails.email}}<i class="fa fa-caret-down"></i>
+			    					</a>
+			    					<ul class="dropdown-menu">
+			    						<li><a href="" ng-click="stateServices();">Profile</a></li>
+			    						<li class="divider"></li>
+			    						<li><a href="" ng-click="stateLogout()">Logout</a></li>
+			    					</ul>
+		    					</li>
+						    </ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+	<!-- Navbar Ends -->
+	</div>
+</header>
+<!-- Header Ends -->

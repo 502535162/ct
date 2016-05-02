@@ -1,0 +1,97 @@
+<md-content class="md-padding" md-theme="default">
+			<md-tabs md-selected="selectedIndex" md-no-ink-bar layout-fill md-dynamic-height md-autoselect md-stretch-tabs="yes">
+				<md-tab ng-repeat="tab in tabs" md-on-select md-on-deselect layout="column" ng-class="{active: $index == selectedIndex}">
+					<md-tab-label>
+						<span>{{tab.title}}</span>
+					</md-tab-label>
+ 					<md-tabs md-selected="subIndex" md-no-ink-bar layout-fill md-dynamic-height md-autoselect md-center-tabs="true">
+						<md-tab label="Select Tests">
+							<div layout="row" layout-xs="column" layout-wrap flex="100" ng-if="tab.islist == false">
+								<div flex="25" layout-xs="column" ng-repeat="test in tests">
+									<md-checkbox ng-disabled="true" ng-model="checked">
+										{{ test.Test_name }}
+									</md-checkbox>
+								</div>
+							</div>
+							<div layout="row" layout-xs="column" layout-wrap flex="100" ng-if="tab.islist == true">
+								<label>Please Select Profile</label>
+								<multiple-autocomplete object-property="Profile_Name" suggestions-arr="profiles"></multiple-autocomplete>
+							</div>
+						</md-tab>
+						<md-tab ng-disabled="disabled" label="Patient Details">
+							<h1 class="md-title">Get in touch by filling the form below</h1>
+							<div layout="row" layout-sm>
+								<md-input-container flex-gt-sm>
+									<label >Name</label>
+									<input required>
+								</md-input-container>
+								<md-input-container flex-gt-sm>
+									<label>Gender</label>
+									<md-select ng-model="Gender">
+										<md-option>Male</md-option>
+										<md-option>Female</md-option>
+									</md-select>
+								</md-input-container>
+								<md-input-container flex-gt-sm>
+									<label>Age</label>
+									<input type="number" required ng-model="pDetails.age" min="1" max="100">
+									<!-- <div ng-messages="pDetails.age.$error" ng-show="pDetails.age.$dirty">
+								      <div ng-message="required">This is required!</div>
+								    </div> -->
+								</md-input-container>
+							</div>
+							<div layout="row" layout-sm>
+								<div flex-xs flex="50">
+									<md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="pDetails.sCollection" class="md-primary" ng-click="selectDetails(pDetails.sCollection,'')">
+										Sample Collection	
+									</md-checkbox>
+								</div>
+								<div flex-xs flex="50">
+									<md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="pDetails.inPerson" class="md-primary" ng-click="selectDetails('', pDetails.inPerson)">
+										In Person
+									</md-checkbox>
+								</div>
+							</div>
+							<div layout="row" layout-sm ng-if="pDetails.sCollection">
+								<md-input-container flex-gt-sm>
+									<label>Patient Address</label>
+									<input required>
+								</md-input-container>
+								<md-input-container flex-gt-md="30">
+									<label>Pick Up Date And Time</label>
+									<input mdc-datetime-picker="" date="true" time="true" type="text" id="datetime"
+									placeholder="Date" min-date="date" ng-model="dateTime" class=" md-input">
+								</md-input-container>
+							</div>
+							<div layout="row" layout-sm ng-if="pDetails.inPerson">
+								<div flex-xs flex="50">
+									<md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="pDetails.isTransport" class="md-primary">
+										Do You Want Transport?
+									</md-checkbox>
+								</div>
+							</div>
+							<div layout="row" layout-sm ng-if="pDetails.isTransport">
+								<md-input-container flex-gt-sm>
+									<label>Pickup Address</label>
+									<input>
+								</md-input-container>
+								<md-input-container flex-gt-md="30">
+									<label>Pick Up Date And Time</label>
+									<input mdc-datetime-picker date="true" time="true" type="text" id="datetime"
+									placeholder="Date" min-date="date" ng-model="dateTime">
+								</md-input-container>
+							</div>
+						</md-tab>
+					</md-tabs>
+					<!-- <div layout="row" layout-xs="column" layout-wrap flex="100">
+						<div flex="25" layout-xs="column" ng-repeat="item in items">
+							<md-checkbox ng-click="toggle(item, selected)">
+								{{ item }}
+							</md-checkbox>
+						</div>
+					</div>  -->
+
+					<md-button class="md-raised md-primary" ng-click="stateNext()">Next</md-button>
+				</md-tab>
+			</md-tabs>
+		</md-content>
