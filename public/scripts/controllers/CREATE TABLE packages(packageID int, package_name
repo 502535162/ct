@@ -1,0 +1,23 @@
+CREATE TABLE packages(packageID int, package_name varchar(30), test_ID int, profile_ID int, package_cost DECIMAL, sample_flag BOOLEAN, inperson_flag BOOLEAN);
+
+
+INSERT INTO packages(packageID, package_name, test_ID, profile_ID, package_cost, sample_flag, inperson_flag, display) VALUES(01, "Basic Package", 01, 0, 20.20, false, false, true);
+
+CREATE TABLE test(TestID int, Test_name varchar(30), Test_Cost DECIMAL, sample_flag BOOLEAN, inperson_flag BOOLEAN);
+
+INSERT INTO test(TestID, Test_name, Test_cost, sample_flag, inperson_flag) VALUES(01, "BP Test",  2.20, false, false);
+
+
+INSERT INTO packages(packageID, package_name, test_ID, profile_ID, package_cost, sample_flag, inperson_flag, display) VALUES(02, "Super Package", 02, 0, 20.20, false, false, true);
+
+INSERT INTO test(TestID, Test_name, Test_cost, sample_flag, inperson_flag) VALUES(02, "Sugar Test",  2.20, false, false);
+
+INSERT INTO test(TestID, Test_name, Test_cost, sample_flag, inperson_flag) VALUES(03, "Sugar Test",  2.20, false, false);
+
+SELECT * FROM packages JOIN test on test.TestID=02 WHERE packages.package_name="Super Package";
+
+INSERT INTO profile_tbl(Profile_ID, Profile_name, Test_ID, Profile_Cost, sample_flag, inperson_flag) VALUES(01, "Profile1", 01, 4.20, false, false);
+
+INSERT INTO packages(packageID, package_name, test_ID, profile_ID, package_cost, sample_flag, inperson_flag, display) VALUES(03, "Individual Package", 03, 01, 40.20, false, false, true);
+
+SELECT * FROM packages JOIN profile_tbl, test ON profile_tbl.Profile_ID=01 AND test.TestID=03 WHERE packages.package_name="Individual Package";

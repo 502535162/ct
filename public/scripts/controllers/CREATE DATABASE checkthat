@@ -1,0 +1,153 @@
+CREATE DATABASE checkthat;
+
+USE checkthat;
+
+userinfo Table:
+CREATE TABLE userinfo(id int auto_increment,email varchar(30),firstname varchar(30),lastname varchar(30),mobile bigint,password varchar(30), primary key(id));
+
+INSERT INTO userinfo(id, email, firstname, lastname, mobile, password) VALUES(1, "srinag63@gmail.com", "srinag", "venkata", "9985786859", "cGFzcw==");
+
+INSERT INTO userinfo(id, email, firstname, lastname, mobile, password) VALUES(2, "shekar@gmail.com", "shekar", "reddy", "9985786859", "cGFzcw==");
+
+INSERT INTO userinfo(id, email, firstname, lastname, mobile, password) VALUES(3, "srikanth@gmail.com", "srikanth", "Bellary", "9985786859", "cGFzcw==");
+
+
+Packages Table:
+CREATE TABLE checkthat_package(Package_ID int, Package_Name varchar(30), Indian_Price decimal, Usa_Price decimal, Aus_Price decimal, Candan_Price decimal, Test_name varchar(30), Sub_Details varchar(255), Sample_Flag boolean, Inperson_Flag boolean, City_Flag boolean, City_name varchar(20), Package_Price varchar(50));
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Diabetes", "HbA1c – Gold Standard marker for 3 months glucose average, Random Blood sugar", true, false, 1, 'Hyderabad', '100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Heart", "Total Cholesterol,HDL,LDL,VLDL,LDL/HDL Ratio,Total Cholesterol/HDL Ratio,Triglycerides", true, false, 1, 'Hyderabad', '100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Liver", "Liver Enzymes (ALT, AST),Bilirubin Total,Hepatitis B Surface Antigen", true, false, 1, 'Hyderabad', '100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Kidney", "BUN,Creatinine (Kidney Functions)", true, false, 1, 'Hyderabad', '100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Thyroid", "T3, T4, TSH", true, false, 1, 'Hyderabad', '100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "General Body Check", "Complete Blood Count,ESR,Uric Acid,Urinalysis,Calcium,Blood Grouping (A,B,O,)&Rh Factor,Sodium,Potassium,Urea,Phosphorus,Urine FEMA,VDRL,Prostate Specific Antigen (PSA)", true, false, 1, 'Hyderabad', '100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Vitamin B12", "For Evaluating never damage", true, false,1, 'Hyderabad', '100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Vitamin D", "For Assessing Bone Health", true, false, 1, 'Hyderabad', '100');
+
+
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(2, "Superpackage", 20, 100, 30, 60, "Diabetes", "HbA1c – Gold Standard marker for 3 months glucose average, Random Blood sugar", false, true, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(2, "Superpackage", 20, 100, 30, 60, "Heart", "Total Cholesterol,HDL,LDL,VLDL,LDL/HDL Ratio,Total Cholesterol/HDL Ratio,Triglycerides", false, true, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(2, "Superpackage", 20, 100, 30, 60, "Liver", "Liver Enzymes (ALT, AST),Bilirubin Total,Hepatitis B Surface Antigen", false, true,1,"Hyderabad", '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(2, "Superpackage", 20, 100, 30, 60, "Kidney", "BUN,Creatinine (Kidney Functions)", false, true, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Superpackage", 20, 100, 30, 60, "Thyroid", "T3,T4,TSH", false, true, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(2, "Superpackage", 20, 100, 30, 60, "INFECTION AND ANAEMIA", "Complete Blood Count,ESR,Urine FEMA", false, true, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(2, "Superpackage", 20, 100, 30, 60, "CANCER SCREEN", "PSA (FOR MALES),PAP(FOR FEMALES)", false, true, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(2, "Superpackage", 20, 100, 30, 60, "Vitamin B12", "For Evaluating never damage", false, true, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(2, "Superpackage", 20, 100, 30, 60, "BONE STRENGTH SCREEN", "Vitamin D,Calcium,Phosphorus", false, true, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(2, "Superpackage", 20, 100, 30, 60, "BodyScans", "ULTRA SOUND ABDOMEN - USG ABDOMEN,X-RAY CHEST PA VIEW,2D ECHO CARDIOGRAM,TREADMILL TEST -TMT", false, true, 1, 'Hyderabad', '150');
+
+
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "Diabetes", "HbA1c – Gold Standard marker for 3 months glucose average,Random Blood sugar", true, false, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "Heart", "Total Cholesterol,HDL,LDL,VLDL,LDL/HDL Ratio,Total Cholesterol/HDL Ratio,Triglycerides", true, false,1, 'Hyderabad' '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "Liver", "Liver Enzymes (ALT, AST),Bilirubin Total,Hepatitis B Surface Antigen", true, false, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "Kidney", "BUN,Creatinine (Kidney Functions)", true, false, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "Thyroid", "T3,T4,TSH", true, false, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "General Body Check", "Complete Blood Count,ESR,Uric Acid,Urinalysis,Calcium,Blood Grouping (A,B,O,)&Rh Factor,Sodium,Potassium,Urea,Phosphorus,Urine FEMA,VDRL,Prostate Specific Antigen (PSA)", true, false, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "INFECTION AND ANAEMIA", "Complete Blood Count,ESR,Urine FEMA", true, false, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "CANCER SCREEN", "PSA (FOR MALES),PAP(FOR FEMALES)", true, false, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "Vitamin B12", "For Evaluating never damage", true, false, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "BONE STRENGTH SCREEN", "Vitamin D,Calcium,Phosphorus", true, false, 1, 'Hyderabad', '150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(3, "Womenpackage", 20, 100, 30, 60, "BodyScans", "ULTRA SOUND ABDOMEN - USG ABDOMEN,X-RAY CHEST PA VIEW,2D ECHO CARDIOGRAM,TREADMILL TEST -TMT,ECG,BONE MINERAL DENSITY SPINE - BMD SPINE,PULMONARY FUNCTION TEST,MAMMOGRAM", true, false, 1, 'Hyderabad', '150');
+
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(4, "Physiotherapy", 20, 100, 30, 60, "Back Pain", "", true, false, 1, 'Hyderabad', null);
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(4, "Physiotherapy", 20, 100, 30, 60, "Neck Pain", "", true, false, 1, 'Hyderabad', null);
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(4, "Physiotherapy", 20, 100, 30, 60, "Nerve Pain", "", true, false, 1, 'Hyderabad', null);
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(4, "Physiotherapy", 20, 100, 30, 60, "Nerve Pain", "", true, false, 1, 'Hyderabad', null);
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(4, "Physiotherapy", 20, 100, 30, 60, "Pelvic Pain", "", true, false, 1, 'Hyderabad', null);
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(4, "Physiotherapy", 20, 100, 30, 60, "Persistent Pain", "", true, false, 1, 'Hyderabad', null);
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(4, "Physiotherapy", 20, 100, 30, 60, "Sports Injuries", "", true, false, 1, 'Hyderabad', null);
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(4, "Physiotherapy", 20, 100, 30, 60, "Surgical Rehab", "", true, false, 1, 'Hyderabad', null);
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(4, "Physiotherapy", 20, 100, 30, 60, "Women's Health", "", true, false, 1, 'Hyderabad', null);
+
+
+
+Test Table:
+CREATE TABLE checkthat_test(Test_ID int,Test_Name varchar(255),Sample_flag boolean, Inperson_Flag boolean, Indian_Price decimal, Usa_Price decimal, Aus_Price decimal, Canada_price decimal);
+
+INSERT INTO checkthat_test(Test_ID, Test_Name, Sample_flag, Inperson_Flag, Indian_Price, Usa_Price, Aus_Price, Canada_price) VALUES(1, "17 Ketosteroid", true, false, 3200, 53.33, 0, 0);
+
+INSERT INTO checkthat_test(Test_ID, Test_Name, Sample_flag, Inperson_Flag, Indian_Price, Usa_Price, Aus_Price, Canada_price) VALUES(2, "17 OH PROGESTERONE - 17 OHP", true, false, 1000, 16.67, 0, 0);
+
+INSERT INTO checkthat_test(Test_ID, Test_Name, Sample_flag, Inperson_Flag, Indian_Price, Usa_Price, Aus_Price, Canada_price) VALUES(3, "24 Hrs Urinary Cortisol/Creatinine Ratio", true, false, 600, 10, 0, 0);
+
+INSERT INTO checkthat_test(Test_ID, Test_Name, Sample_flag, Inperson_Flag, Indian_Price, Usa_Price, Aus_Price, Canada_price) VALUES(4, "25 Hydroxy vitamin D - VIT D3", true, false, 4000, 66.67, 0, 0);
+
+INSERT INTO checkthat_test(Test_ID, Test_Name, Sample_flag, Inperson_Flag, Indian_Price, Usa_Price, Aus_Price, Canada_price) VALUES(5, "25-OH VITAMIN D (TOTAL)", true, false, 2000, 33.33, 0, 0);
+
+INSERT INTO checkthat_test(Test_ID, Test_Name, Sample_flag, Inperson_Flag, Indian_Price, Usa_Price, Aus_Price, Canada_price) VALUES(6, "2D Echo", false, true, 1200, 20, 0, 0);
+
+INSERT INTO checkthat_test(Test_ID, Test_Name, Sample_flag, Inperson_Flag, Indian_Price, Usa_Price, Aus_Price, Canada_price) VALUES(7, "5 Dihydrotestosterone -  DHT", true, false, 3270, 54.5, 0, 0);
+
+INSERT INTO checkthat_test(Test_ID, Test_Name, Sample_flag, Inperson_Flag, Indian_Price, Usa_Price, Aus_Price, Canada_price) VALUES(8, "5 Hydroxy indole Acetic Acid - 5 HIAA", true, false, 2800, 46.67, 0, 0);
+
+INSERT INTO checkthat_test(Test_ID, Test_Name, Sample_flag, Inperson_Flag, Indian_Price, Usa_Price, Aus_Price, Canada_price) VALUES(9, "ABSOLUTE EOSINOPHIL COUNT - AEC", true, false, 140, 2.33, 0, 0);
+
+INSERT INTO checkthat_test(Test_ID, Test_Name, Sample_flag, Inperson_Flag, Indian_Price, Usa_Price, Aus_Price, Canada_price) VALUES(10, "ABSOLUTE NEUTROPHIL COUNT", true, false, 140, 2.33, 0, 0);
+
+
+Profile Table:
+CREATE TABLE checkthat_profile(Profile_ID int,Profile_Name varchar(100),Test_Name varchar(255),Specimen varchar(30), Indian_Price decimal, Usa_Price decimal, Aus_Price decimal, Candan_Price decimal,Sample_flag boolean,Inperson_Flag boolean);
+
+INSERT INTO checkthat_profile(Profile_ID, Profile_Name, Test_Name, Specimen, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Sample_flag, Inperson_Flag) VALUES(1, "ORTHO SCREEN", "ASO,CRP,RA,Uric Acid", "Serum", 1200, 20, 0, 0, true, false);
+
+INSERT INTO checkthat_profile(Profile_ID, Profile_Name, Test_Name, Specimen, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Sample_flag, Inperson_Flag) VALUES(2, "OBESITY PROFILE", "Creatinine,Phosphorus,Uric acid Electrolytes,Calcium,Lipid Profile T3,T4,TSH", "Serum", 2200, 37, 0, 0, true, false);
+
+INSERT INTO checkthat_profile(Profile_ID, Profile_Name, Test_Name, Specimen, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Sample_flag, Inperson_Flag) VALUES(3, "PRE EMPLOYMENT SCREEN BASIC MALE", "Morphine,Cannabinoids in Urine HIV I & II Antibodies,HBsAb,RPR", "Serum & Urine", 3000, 50, 0, 0, true, false);
+
+INSERT INTO checkthat_profile(Profile_ID, Profile_Name, Test_Name, Specimen, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Sample_flag, Inperson_Flag) VALUES(4, "PRE EMPLOYMENT SCREEN EXTENDED FEMALE", "Random Blood Sugar Morphine and Cannobinoids Urine,HIV I & II Antibodies,HBsAb,HPV PCR(Optional add on test)", "Serum & Urine", 5200, 87, 0, 0, true, false);
+
+INSERT INTO checkthat_profile(Profile_ID, Profile_Name, Test_Name, Specimen, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Sample_flag, Inperson_Flag) VALUES(5, "PROSTATE FUNCTION SCREEN", "Prostatic Acid Phosphatases, Total PSA", "Serum", 1200, 20, 0, 0, true, false);
+
+INSERT INTO checkthat_profile(Profile_ID, Profile_Name, Test_Name, Specimen, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Sample_flag, Inperson_Flag) VALUES(6, "POLYCYSTIC OVARIES SCREEN", "17-OH Progesterone,Cholesterol,
+DHEA S,FSH,LH,Prolactin,SHBG, Testosterone,Insulin", "Serum", 0, 0, 0, 0, true, false);
+
+
+
+Patient Table:
+CREATE TABLE checkthat_patient_tbl(Patient_ID int auto_increment, User_ID int, Patient_Last_Name varchar(30), Patient_First_Name varchar(30), Patient_Mobile_Number bigint, Patient_Age int, Patient_Gender varchar(20), primary key(Patient_ID));
+
+
+
+Service Info Table:
+CREATE TABLE checkthat_serviceinfo_tbl(ServiceID int auto_increment, User_ID int, Patient_ID int, Package_ID int, Profile_ID int, Test_ID int, SampleCollection_flag boolean, Inperson_flag boolean, isTransport boolean, Address1 varchar(255), Address2 varchar(255), City varchar(30), State varchar(30), Zipcode varchar(30), Appointment_date varchar(30), Total_Cost varchar(30), primary key(ServiceID));
+
+
+Sales Info Table
+CREATE TABLE checkthat_salesinfo_tbl(SalesID int auto_increment, Service_ID int, User_ID int, Patient_ID int, Package_ID int, Profile_ID int, Test_ID int, Total_Cost varchar(30), Transcation_ID bigint, Transcation_Status varchar(30), primary key(SalesID));

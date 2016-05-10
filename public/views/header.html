@@ -1,0 +1,41 @@
+<!-- Header Starts -->
+<header>
+	<div class="" style="background:#fff;">
+		<!-- Top Bar Starts -->
+			<div class="top-bar navbar" style="margin-bottom:0 !important;">
+				<div class="container">
+					<div class="col-sm-6 col-xs-12">
+						<ul class="list-unstyled list-inline" style="text-align:left;">
+							<li><a href="mailto:care@yourhosptialsname.com">
+								<i class="fa fa-envelope-o"></i>
+								info@checkthat.co
+							</a></li>
+							<li><i class="fa fa-phone"></i> Call Us: 1-844-320-9499</li>
+						</ul>
+					</div>
+					<div class="col-sm-6 col-xs-12">
+						<ul class="list-unstyled list-inline" ng-if="loginSuccess == false">
+							<li><a ui-sref="login"><i class="fa fa-user"></i>login</a></li>
+							<li><a ui-sref="signup"><i class="fa fa-lock"></i>Signup</a></li>
+							<li><a target="_blank" href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+							<li><a target="_blank" href="https://plus.google.com/"><i class="fa fa-google-plus"></i></a></li>
+							<li><a target="_blank" href="https://www.youtube.com/"><i class="fa fa-youtube"></i></a></li>	
+						</ul>
+						<ul class="list-unstyled list-inline" ng-if="loginSuccess == true">
+					    	<li class="dropdown">
+		    					<a href="" data-toggle="dropdown" class="dropdown-toggle ng-binding">Welcome {{userdetails.firstname}}<i class="fa fa-caret-down fa-chevron-up"></i>
+		    					</a>
+		    					<ul class="dropdown-menu">
+		    						<li><a href="" ng-click="stateProfile()">Profile</a></li>
+		    						<li class="divider"></li>
+		    						<li><a href="" ng-click="stateLogout()">Logout</a></li>
+		    					</ul>
+	    					</li>
+					    </ul>
+					</div>
+				</div>
+			</div>
+		<!-- Top Bar Ends -->
+	</div>
+</header>
+<!-- Header Ends -->

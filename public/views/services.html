@@ -1,0 +1,493 @@
+<appheader></appheader>
+
+<!-- Breadcrumb Starts -->
+	<div class="breadcrumb" ng-init="servicesLoad()">
+		<div class="container">
+			<ul class="list-unstyled list-inline">
+				<li><a ui-sref="home">Home</a></li>
+				<li>{{operations}}</li>
+			</ul>
+		</div>
+	</div>		
+	<!-- Breadcrumb Ends -->
+	<div class="container main-container services">
+		<div class="row">
+			<div class="col-md-3 col-xs-12 sidebar">
+				<!-- <ul class="nav nav-list">
+					<li ng-repeat="item in sidelist" ng-class="navClass('{{item.name}}')" style="border-bottom:1px dotted #000;"> 
+						<a href=''>{{item.name}}</a> 
+					</li>
+				</ul> -->
+				<ul class="list-style-1">
+					<li class="" ng-click="isHealthCheckup = false; operations = 'Doctors' "><a href=''>Doctors</a></li>
+					<li class="selected" ng-click="healthcheckups()"><a href=''>Health Checkup</a></li>
+					<li class="" ng-click="isHealthCheckup = false; operations = 'Reports' "><a href=''>Reports</a></li>
+					<li class="" ng-click="isHealthCheckup = false; operations = 'Weekly Deals' "><a href=''>Weekly Deals</a></li>
+					<li class="" ng-click="isHealthCheckup = false; operations = 'Contact Us' "><a href=''>Contact Us</a></li>
+				</ul>
+			</div>
+			<div class="col-md-8 col-xs-12 rightcol">
+				<div class="tabs-wrap" ng-if="isHealthCheckup == true">
+					<ul class="nav nav-tabs" style="">
+						<li class="" ng-repeat="tab in tabs" ng-class="{active:$index == selTabindex}" ng-click="getSelTabindex($index, tabs)">
+							<a ng-href="{{$index}}" data-target="#{{$index}}" aria-controls="" data-toggle="tab">
+								<h5>{{tab.title}}</h5>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="tab-content" ng-if="isHealthCheckup == true">
+					<div ng-attr-id="{{$index}}" class="tab-pane fade in" ng-class="{active:$index == selTabindex}" ng-repeat="tab in tabs">
+						<angular-accordion ng-if="tab.isphyso == false">
+							<pane ng-show="true">
+								<pane-header>
+									Test Info ({{tests.length}})
+								</pane-header>
+								<pane-content>
+									<div class="row" ng-repeat="test in tests" ng-if="$index % 3 == 0 && tab.islist == false" style="margin-bottom:0;" >
+							        	<div class="col-md-4" ng-if="tab.islist == false" ng-show="tests[$index].Test_name">
+											<div class="panel panel-default">
+												<div class="panel-heading"> 
+													<h5 class="panel-title">
+													<a data-toggle="collapse" data-parent="" href="" class="" aria-expanded="true" data-target="#test{{tab.title}}{{$index}}" ng-click="testtoggle($event)"><span class="fa pull-right fa-plus"></span>
+														{{tests[$index].Test_name}}
+													</a>
+												</h5>
+												</div>
+												<div class="panel-body collapse" ng-attr-id="test{{tab.title}}{{$index}}">
+													<ul>
+														<li ng-repeat="item in tests[$index].Sub_Details.split(',')">{{item}}</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-4" ng-if="tab.islist == false" ng-show="tests[$index+1].Test_name">
+											<div class="panel panel-default">
+												<div class="panel-heading"> 
+													<h5 class="panel-title">
+													<a data-toggle="collapse" data-parent="" href="" class="" aria-expanded="true" data-toggle="" data-target="#test{{tab.title}}{{$index+1}}" ng-click="testtoggle($event)"><span class="fa pull-right fa-plus"></span>
+														{{tests[$index+1].Test_name}}
+													</a>
+												</h5>
+												</div>
+												<div class="panel-body collapse" ng-attr-id="test{{tab.title}}{{$index+1}}">
+													<ul>
+														<li ng-repeat="item in tests[$index+1].Sub_Details.split(',')">{{item}}</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-md-4" ng-if="tab.islist == false" ng-show="tests[$index+2].Test_name" ng-show="tests[$index+2].Test_name">
+											<div class="panel panel-default">
+												<div class="panel-heading"> 
+													<h5 class="panel-title">
+													<a data-toggle="collapse" data-parent="" href="" class="" aria-expanded="true" data-toggle="" data-target="#test{{tab.title}}{{$index+2}}" ng-click="testtoggle($event)"><span class="fa pull-right fa-plus"></span>
+														{{tests[$index+2].Test_name}}
+													</a>
+												</h5>
+												</div>
+												<div class="panel-body collapse" ng-attr-id="test{{tab.title}}{{$index+2}}" >
+													<ul>
+														<li ng-repeat="item in tests[$index+2].Sub_Details.split(',')">{{item}}</li>
+													</ul>
+												</div>
+											</div>
+										</div>										
+									</div>
+
+									<div class="row" ng-if="tab.islist == true" style="margin-bottom:0;" >
+										<div class="col-lg-12">
+							        		<div class="col-md-6" style="margin-bottom:32px;">
+							        			<label class="form-label">Select Your Profiles</label>
+								        		<multiple-autocomplete ng-model="selProfiles" object-property="Profile_Name"
+								        		suggestions-arr="profiles">
+								        		</multiple-autocomplete>
+							        		</div>
+							        		<div class="col-md-6" style="margin-bottom:32px;">
+							        			<label class="form-label">Select Your Tests</label>
+								        		<multiple-autocomplete ng-model="selTests" object-property="Test_Name"
+								        		suggestions-arr="indtests">
+								        		</multiple-autocomplete>
+							        		</div>
+						        		</div>
+						        	</div>
+
+						        	<div class="row">
+										<div class="centered" style="text-align:center;" ng-attr-id="btn{{tab.index1}}">
+										    <button class="btn btn-large btn-primary" type="button" ng-click="nextaccordion(tab.index1, tab.index2, $index)">Next</button>
+										</div>
+									</div>
+								</pane-content>
+							</pane>
+							<pane>
+								<pane-header disabled="{{ paneEnabled() }}">
+									Patient Details
+								</pane-header>
+								<pane-content>
+									<div class="alert alert-danger" ng-if="pAlert">{{pAlert}}</div>
+									<form name="form">
+										<div class="form-group col-lg-6">
+								            <label for="inputFname">Patient First Name</label>
+								            <input type="text" class="form-control" id="inputFname" placeholder="First Name" ng-model="pDetails.firstname" required name="fname" ng-class="{submitted:submitted}">
+								        </div>
+								        <div class="form-group col-lg-6">
+								            <label for="inputLname">Patient Last Name</label>
+								            <input type="text" class="form-control" id="inputLname" placeholder="Last Name" ng-model="pDetails.lastname" required name="lname" ng-class="{submitted:submitted}">
+								        </div>
+								        <div class="form-group col-lg-4">
+								            <label for="inputGender">Gender</label>
+								            <select class="form-control" ng-init="pDetails.gender = items[0]" ng-model="pDetails.gender" ng-options="i.name for i in items" id="inputGender">
+								            </select>
+								        </div>
+								        
+								        <div class="form-group col-lg-4">
+								            <label for="inputAge">Patient Age</label>
+								            <input type="text" class="form-control" id="inputAge" placeholder="Age" ng-model="pDetails.age" required name="age" ng-class="{submitted:submitted}">
+								        </div>								        
+
+								        <div class="form-group col-lg-4">
+								            <label for="inputMnumber">Patient Mobile Number</label>
+								            <input type="text" class="form-control" id="inputMnumber" placeholder="Mobile Number" ng-model="pDetails.mobile" min="0" required name="mNumber" ng-class="{submitted:submitted}">
+								        </div>
+									</form>
+									<div class="centered" style="margin-top:30px; text-align:center;" ng-attr-id="btn{{tab.index1}}">
+									    <button class="btn btn-large btn-primary" type="button" ng-click="submitted=true; nextaccordion1()">Next</button>
+									</div>
+								</pane-content>
+							</pane>
+
+							<pane>
+								<pane-header disabled="{{ paneEnabled1() }}">
+									Collection Details
+								</pane-header>
+								<pane-content>
+									<div class="row" style="margin:0;">
+										<div class="alert alert-danger" ng-if="pAlert">{{pAlert}}</div>
+										<form name="form">
+											<div class="form-group" ng-class="{submitted:submitted}" required>
+									        	<div class="col-lg-6">
+							                        <div class="well well-sm">
+							                            <div class="checkbox">
+							                                <label>
+							                                    <input type="radio" ng-model="pDetails.venue" value="sCollection" required name="sCollection" ng-class="{submitted:submitted}">  Sample Collection
+							                                </label>
+							                            </div>
+							                        </div>
+							                    </div>
+							                    <div class="col-lg-6">
+							                        <div class="well well-sm">
+							                            <div class="checkbox">
+							                                <label>
+							                                    <input type="radio" ng-model="pDetails.venue" value="inPerson" ng-model="pDetails.venue" required name="inPerson" ng-class="{submitted:submitted}">  In Person
+							                                </label>
+							                            </div>
+							                        </div>
+							                    </div>
+								            </div>
+
+								            <div class="col-lg-12" ng-show="pDetails.venue == 'inPerson' " ng-if="citytransport == true">
+						                        <div class="well well-sm">
+						                            <div class="">
+						                                <label>Do You Want Transport?
+															<input type="checkbox" value="pDetails.isTransport" ng-model="pDetails.isTransport">
+														</label>
+						                            </div>
+						                        </div>
+						                    </div>
+
+									        <div class="col-lg-12 form-group" ng-if="(pDetails.venue == 'sCollection') || (pDetails.isTransport == true)">
+									        	<label for="inputAddress1">Address Line1</label>
+									        	<input type="text" class="form-control" id="inputAddress1" placeholder="Patient Address" ng-model="pDetails.pAddress1" required name="pAddress1" ng-class="{submitted:submitted}">
+									        </div>
+
+									        <div class="col-lg-12" ng-if="(pDetails.venue == 'sCollection') || (pDetails.isTransport == true)">
+									        	<label for="inputAddress2">Address Line2</label>
+									        	<input type="text" class="form-control" id="inputAddress2" placeholder="Patient Address" ng-model="pDetails.pAddress2" name="pAddress2" required ng-class="{submitted:submitted}">
+									        </div>
+
+									        <div class="col-lg-6 form-group" ng-if="(pDetails.venue == 'sCollection') || (pDetails.isTransport == true)">
+									        	<label for="inputCity">City</label>
+									        	<input type="text" class="form-control" id="inputCity" placeholder="" ng-model="pDetails.pCity" name="city" required ng-class="{submitted:submitted}">
+									        </div>
+
+									        <div class="col-lg-6 form-group" ng-if="(pDetails.venue == 'sCollection') || (pDetails.isTransport == true)">
+									        	<label for="inputState">State</label>
+									        	<input type="text" class="form-control" id="inputState" placeholder="" ng-model="pDetails.pState" name="state" required ng-class="{submitted:submitted}">
+									        </div>
+
+									        <div class="col-lg-6 form-group" ng-if="(pDetails.venue == 'sCollection') || (pDetails.isTransport == true)">
+									        	<label for="inputZipcode">Zipcode</label>
+									        	<input type="text" class="form-control" id="inputZipcode" placeholder="" ng-model="pDetails.pZipcode" name="zipcode" required ng-class="{submitted:submitted}">
+									        </div>
+
+									        <div class="col-lg-6 form-group" ng-if="(pDetails.venue == 'sCollection') || (pDetails.isTransport == true)">
+									        	<label for="inputCountry">Country</label>
+									        	<input type="text" class="form-control" id="inputCountry" placeholder="" value="India" disabled>
+									        </div>
+
+									        <div class="col-lg-6 form-group" ng-show="(pDetails.venue == 'sCollection') || (pDetails.isTransport == true)">
+									        	<label for="">Choose Date and Time</label>
+												<div>
+													<div ng-attr-id="sample{{$index}}" class="input-append date">
+														<div class="input-group">
+															<input type="text" class="form-control" ng-model="pDetails.dt" name="dt" id="dt"/>
+															<span class="input-group-addon add-on">
+																<i class="fa fa-calendar" aria-hidden="true"></i>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>						                    
+										</form>
+									</div>
+									<div class="row">
+										<div class="centered" style="margin-top:30px; text-align:center;" ng-attr-id="btn{{tab.index1}}">
+									    	<button class="btn btn-large btn-primary" type="button" ng-click="submitted=true; nextaccordion2()">Next</button>
+										</div>
+									</div>
+								</pane-content>
+							</pane>
+
+					        <pane>
+					        	<pane-header disabled="{{ paneEnabled2() }}">
+					                Check Out
+					            </pane-header>
+					            <pane-content>
+					            	<div class="col-sm-12 col-md-10 col-md-offset-1">
+					            		<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th>Product</th>
+													<th class="text-center">Price</th>			
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="col-sm-3 col-md-3">
+														<div class="media">
+															<div class="media-body">
+																<a href="">{{tab.title}}</a>
+															</div>
+														</div>
+													</td>
+													<td class="col-sm-1 col-md-1 text-center"><strong>${{packagePrice}}</strong></td>
+												</tr>
+												<tr ng-if="pDetails.isTransport == true">
+													<td class="col-sm-3 col-md-3">
+														<div class="media">
+															<div class="media-body">
+																<a href="">Transport</a>
+															</div>
+														</div>
+													</td>
+													<td class="col-sm-1 col-md-1 text-center"><strong>$20</strong></td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td>
+														<strong class="pull-right"><span>Grand Total</span></strong>
+													</td>
+													<td style="" class="text-center">
+														<strong><span>${{gTotal}}</span></strong>
+													</td>
+												</tr>
+											</tfoot>
+					            		</table>
+										<div class="row">
+											<div class="col-sm-12 hidden-xs">
+												<p class="have_discount_coupon append_bottom5">Have an e-coupon or a deal-code ? <span class="light_gray">(Optional)</span></p>
+											</div>
+											<div class="col-sm-12 mobile_fullwidth">
+												<div class="row">
+													<div class="col-lg-12 col-md-12">
+														<form role="form" class="ng-pristine ng-valid">
+															<div class="input-group">
+																<input type="text" class="input-md form-control ng-pristine ng-valid ng-touched" placeholder="Enter Coupon code">
+																<a href="" class="input-group-addon btn btn-lg btn-secondary ng-binding" ng-click="applyCoupon();">Apply
+																</a>
+															</div>
+														</form>
+													</div>
+													<!-- <div class="radio col-md-12">
+														<label class="col-lg-7"><input type="radio" name="optradio">EBS payment system - safe and trusted</label>
+														<img src="content/images/secure-payment.jpg" />
+													</div>
+													<div class="radio col-md-12" style="margin-bottom:40px;">
+														<label><input type="radio" name="optradio">Paypal PG</label>
+													</div> -->
+													<div class="radio col-md-4">
+														<!-- <input type="button" class="form-control btn btn-primary" value="Continue" ng-click="submittopaypal()" /> -->
+														<a href="" ng-click="submittopaypal()">
+															<img src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;" />
+														</a>
+													</div>
+													<!-- <div class="radio col-md-4">
+														<input type="button" class="form-control btn btn-default" value="Back" />
+													</div> -->
+												</div>
+											</div>
+										</div>
+					            	</div>
+					            </pane-content>
+					        </pane>
+						</angular-accordion>
+						<angular-accordion ng-if="tab.isphyso == true">
+							<pane>
+								<pane-header>
+									Test Info ({{tests.length}})
+								</pane-header>
+								<pane-content>
+									<div class="" ng-if="tab.isphyso == true" style="margin-bottom:0;" >
+										<ul class="list-inline"> 
+											<li ng-repeat="test in tests">
+												<input type="checkbox" checklist-model="selPhyso" checklist-value="test.Test_name" ng-change="check(test.Test_name, checked)"> {{test.Test_name}}
+											</li>
+										</ul>
+						        	</div>
+						        	<div class="centered" style="margin-top:30px; text-align:center;" ng-attr-id="btn{{tab.index1}}">
+									    <button class="btn btn-large btn-primary" type="button" ng-click="submitted=true; nextaccordion()">Next</button>
+									</div>
+								</pane-content>
+							</pane>
+							<pane>
+								<pane-header disabled="{{ paneEnabled() }}">
+									Patient Details
+								</pane-header>
+								<pane-content>
+									<div class="alert alert-danger" ng-if="pAlert">{{pAlert}}</div>
+									<form name="form">
+										<div class="form-group col-lg-6">
+								            <label for="inputFname">Patient First Name</label>
+								            <input type="text" class="form-control" id="inputFname" placeholder="First Name" ng-model="pDetails.firstname" required name="fname" ng-class="{submitted:submitted}">
+								        </div>
+								        <div class="form-group col-lg-6">
+								            <label for="inputLname">Patient Last Name</label>
+								            <input type="text" class="form-control" id="inputLname" placeholder="Last Name" ng-model="pDetails.lastname" required name="lname" ng-class="{submitted:submitted}">
+								        </div>
+								        <div class="form-group col-lg-4">
+								            <label for="inputGender">Gender</label>
+								            <select class="form-control" ng-init="pDetails.gender = items[0]" ng-model="pDetails.gender" ng-options="i.name for i in items" id="inputGender">
+								            </select>
+								        </div>
+								        
+								        <div class="form-group col-lg-4">
+								            <label for="inputAge">Patient Age</label>
+								            <input type="text" class="form-control" id="inputAge" placeholder="Age" ng-model="pDetails.age" required name="age" ng-class="{submitted:submitted}">
+								        </div>								        
+
+								        <div class="form-group col-lg-4">
+								            <label for="inputMnumber">Patient Mobile Number</label>
+								            <input type="text" class="form-control" id="inputMnumber" placeholder="Mobile Number" ng-model="pDetails.mobile" min="0" required name="mNumber" ng-class="{submitted:submitted}">
+								        </div>
+									</form>
+									<div class="centered" style="margin-top:30px; text-align:center;" ng-attr-id="btn{{tab.index1}}">
+									    <button class="btn btn-large btn-primary" type="button" ng-click="submitted=true; physoCheckout()">Next</button>
+									</div>
+								</pane-content>
+							</pane>
+							<pane>
+								<pane-header disabled=" {{ paneConfirm() }} ">
+									Confirmation
+								</pane-header>
+								<pane-content>
+									<div class="alert alert-success">
+										<strong>Recorded Created Successfully!</strong> 
+									</div>
+								</pane-content>
+							</pane>
+
+						</angular-accordion>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<footer class="main-footer">
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<h4>Partners</h4>
+					<ul class="list-unstyled">
+						<li><a href=""> » <img src="content/images/patners/sid.png" style="width:150px; height:60px;"></a></li>
+						<li><a href=""> » <img src="content/images/patners/rite.png" style="width:150px; height:60px;"></a></li>
+						<li><a href=""> »  <img src="content/images/patners/thyrocare.png" style="width:150px; height:60px;"></a></li>
+						<li><a href=""> »  <img src="content/images/patners/kalinga.png"></a></li>
+						<li><a href=""> »  <img src="content/images/patners/vardhan.png" style="width:150px; height:60px;"></a></li>
+					</ul>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-12">
+					<h4>Services</h4>
+					<ul class="list-unstyled">
+						<li><a href="#"><i class="fa fa-angle-right"></i> Basic Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Super Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Women Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Individual Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Physiotherapy</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Tests & Profiles</a><1/li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Nursing</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Top 10</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Best Deels</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-xs-12">
+					<!-- Testimonials Starts -->
+					<h4 class="side-heading1">Testimonials</h4>
+					<div id="testimonial-carousel" class="testimonial-box carousel" data-ride="carousel">
+					<!-- Indicators Starts -->
+						<ol class="carousel-indicators">
+							<li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="1"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="2"></li>
+						</ol>
+					<!-- Indicators Ends -->
+					<!-- Wrapper For Slides Starts -->
+						<div class="carousel-inner quote-box" role="listbox">
+							<i class="fa fa-quote-left fa-2x"></i>
+						<!-- Quote #1 Starts -->
+							<div class="item active">
+								<blockquote>
+									I've been paying roughly rs 900 for Thyroid profile and RBS test at some diagnostic center . This year I tried CheckThat and discovered that most of the diagnostic center  on the website offered it for Rs 450! I got the test done  . Now I am using CheckThat every time and most my friends are also using it …Great job CheckThat.
+								</blockquote>
+								<div class="quote-footer">
+									Divya Konila<br>
+									<span>Female, 45 Years</span>
+								</div>
+							</div>
+						<!-- Quote #1 Ends -->
+						<!-- Quote #2 Starts -->
+							<div class="item">
+								<blockquote>
+									I Love CheckThat …my mother stays in Hyderabad and i can’t help her out in medical needs ….i saw a ad and gave a try 6 months back…they created a personalized package for her … i tried it 1st time i loved it as they made me to talk with the doctor and made me to understand whats my mothers problem was now i took a yearly package from CheckThat . Every thing is look after by them and i get regular updates from CheckThat …What else can i ask more ….Hats off CheckThat.
+								</blockquote>
+								<div class="quote-footer">
+									Varun Nidamarthy<br>
+									<span>Male, 36 Years</span>
+								</div>
+							</div>
+						<!-- Quote #2 Ends -->
+						<!-- Quote #3 Starts -->
+							<div class="item">
+								<blockquote>
+									I Booked a special health checkup for my parents seeing a promotional mail . they had done all the test in Apollo hospital which i never imagined and sent me a copy of the reports and detailed report from the doctor who examined my parents . I got to know many things of my parents health  I don’t have words to express .Thank you CheckThat.
+								</blockquote>
+								<div class="quote-footer">
+									Rashi reddy<br>
+									<span>Female, 29 Years</span>
+								</div>		
+							</div>
+						<!-- Quote #3 Ends -->
+						</div>
+					<!-- Wrapper For Slides Ends -->
+					</div>
+				<!-- Testimonials Ends -->
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

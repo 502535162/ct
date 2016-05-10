@@ -1,0 +1,131 @@
+<appheader></appheader>
+
+<div>
+<!-- Breadcrumb Starts -->
+	<div class="breadcrumb" ng-init="servicesLoad()">
+		<div class="container">
+			<ul class="list-unstyled list-inline">
+				<li><a ui-sref="home">Home</a></li>
+				<li>Services</li>
+			</ul>
+		</div>
+	</div>		
+	<!-- Breadcrumb Ends -->
+	<div class="container main-container services">
+		<div class="row">
+			<div class="col-md-3 col-xs-12 sidebar">
+				<ul class="list-style-1">
+					<li><a href="">Doctors</a></li>
+					<li><a href="" ng-click="healthcheckups()">Health Checkup</a></li>
+					<li><a href="">Reports</a></li>
+					<li><a href="">Nursing</a></li>
+					<li><a href="">Physiotheraphy</a></li>
+					<li><a href="">Contact Us</a></li>
+				</ul>
+			</div>
+			<div class="col-md-8 col-xs-12 rightcol">
+				<div class="tabs-wrap" ng-if="isHealthCheckup == true">
+					<ul class="nav nav-tabs" style="">
+						<li class="" ng-repeat="tab in tabs" ng-class="{active:$index == selTabindex}" ng-click="getSelTabindex($index, tabs)">
+							<a ng-href="{{$index}}" data-target="#{{$index}}" aria-controls="" data-toggle="tab">
+								<h5>{{tab.title}}</h5>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="tab-content" ng-if="isHealthCheckup == true">
+					<div ng-attr-id="{{$index}}" class="tab-pane fade in" ng-class="{active:$index == selTabindex}" ng-repeat="tab in tabs">
+						<accordion>
+							<accordion-group ng-repeat="group in groups" ng-attr-id="{{tab.index1}}">
+								<accordion-heading>
+						        	<span ng-click="opened(group, $index)">
+						        		{{group.title}} <i class="pull-right fa" ng-class="{'fa-chevron-down': group.open, 'fa-chevron-right': !group.open}"></i>
+						        	</span>
+						        </accordion-heading>
+						        {{group.content}}
+						    </accordion-group>    
+						</accordion>     
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="main-footer">
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<h4>Partners</h4>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-12">
+					<h4>Services</h4>
+					<ul class="list-unstyled">
+						<li><a href="#"><i class="fa fa-angle-right"></i> Basic Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Super Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Women Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Individual Package</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Physiotherapy</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Tests & Profiles</a><1/li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Nursing</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Top 10</a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i> Best Deels</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-xs-12">
+					<!-- Testimonials Starts -->
+					<h4 class="side-heading1">Testimonials</h4>
+					<div id="testimonial-carousel" class="testimonial-box carousel" data-ride="carousel">
+					<!-- Indicators Starts -->
+						<ol class="carousel-indicators">
+							<li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="1"></li>
+							<li data-target="#testimonial-carousel" data-slide-to="2"></li>
+						</ol>
+					<!-- Indicators Ends -->
+					<!-- Wrapper For Slides Starts -->
+						<div class="carousel-inner quote-box" role="listbox">
+							<i class="fa fa-quote-left fa-2x"></i>
+						<!-- Quote #1 Starts -->
+							<div class="item active">
+								<blockquote>
+									Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+								</blockquote>
+								<div class="quote-footer">
+									Jeniffier Loppax<br>
+									<span>Female, 45 Years</span>
+								</div>
+							</div>
+						<!-- Quote #1 Ends -->
+						<!-- Quote #2 Starts -->
+							<div class="item">
+								<blockquote>
+									Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit.
+								</blockquote>
+								<div class="quote-footer">
+									Sam Pobbel<br>
+									<span>Male, 36 Years</span>
+								</div>
+							</div>
+						<!-- Quote #2 Ends -->
+						<!-- Quote #3 Starts -->
+							<div class="item">
+								<blockquote>
+									Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dol or id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+								</blockquote>
+								<div class="quote-footer">
+									Jenny Hoter<br>
+									<span>Female, 29 Years</span>
+								</div>		
+							</div>
+						<!-- Quote #3 Ends -->
+						</div>
+					<!-- Wrapper For Slides Ends -->
+					</div>
+				<!-- Testimonials Ends -->
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

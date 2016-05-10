@@ -1,0 +1,90 @@
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Cardiac Risk Marker", "Homocysteine,Lipoprotein-A,Apolipoprotein-A1,Apolipoprotein-B,C- reactive Protein(hs-CRP),Apo B/ Apo A1 Ratio", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Vitamin Profile", "Vitamin D total,Vitamin B12,Folic Acid ", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Arthritis Profile", "Anti Cyclic Citrullinated Peptide Antibody,Antinuclear Antibodies(ANA)", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Thyroid Profile", "TRIIODOTHYRONINE (T3),THYROXINE (T4),THYROID STIMULATING HORMONE (TSH)", true, false, 2, 'OtherCitys', '100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Diabetes", "AVERAGE BLOOD GLUCOSE (ABG),HbA1c", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "IRON DEFICIENCY", "TRANSFERRIN SATURATION,FERRITIN,IRON,IRON BINDING CAPACITY (TIBC)", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "LIVER", "SERUM ALBUMIN/GLOBULIN RATIO,ALKALINE PHOSPHATASE,BILIRUBIN -DIRECT,BILIRUBIN (INDIRECT),BILIRUBIN - TOTAL,GAMMA GLUTAMYL TRANSFERASE (GGT),PROTEIN - TOTAL,ALBUMIN - SERUM,SERUM GLOBULIN,ASPARTATE AMINOTRANSFERASE (SGOT ),ALANINE TRANSAMINASE (SGPT)", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Cholesterol Profile", "LDL Cholesterol,Total Cholesterol,HDL Cholesterol,Non-HDL Cholesterol,Triglycerides,VLDL Cholesterol,LDL/HDL Ratio,TC/HDL Cholesterol Ratio", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "kidney Profile", "Calcium,Uric Acid,Blood Urea Nitrogen,Serum Creatinine,BUN/Serum Creatnine Ratio", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Pancreas Profile", "Serum Amylase,Serum Lipase", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Electolytes Profile", "Sodium,Chloride", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "Testosterone", "", true, false, 2, 'OtherCitys','100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Basicpackage", 20, 50, 30, 60, "COMPLETE HEMOGRAM", "BASOPHILS - ABSOLUTE COUNT,EOSINOPHILS - ABSOLUTE COUNT,LYMPHOCYTES - ABSOLUTE COUNT,MONOCYTES - ABSOLUTE COUNT,NEUTROPHILS - ABSOLUTE COUNT,BASOPHILS,EOSINOPHILS,HEMOGLOBIN,IMMATURE GRANULOCYTES(IG),IMMATURE GRANULOCYTE PERCENTAGE(IG%)", true, false, 2, 'OtherCitys','$100');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "ARTHRITIS", "ANTI CCP (ACCP),ANTI NUCLEAR ANTIBODIES (ANA)", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "CANCER", "APOLIPOPROTEIN - B (APO-B)", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "CARDIAC RISK MARKERS", "APO B / APO A1 RATIO (Apo B/A1),APOLIPOPROTEIN - A1 (APO-A1),APOLIPOPROTEIN - B (APO-B),HIGH SENSITIVITY C-REACTIVE PROTEIN (hs- CRP),HOMOCYSTEINE,LIPOPROTEIN (A) [LP(A)]", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "COMPLETE HEMOGRAM", "BASOPHILS - ABSOLUTE COUNT,EOSINOPHILS - ABSOLUTE COUNT,LYMPHOCYTES - ABSOLUTE COUNT,MONOCYTES - ABSOLUTE COUNT,NEUTROPHILS - ABSOLUTE COUNT,BASOPHILS,EOSINOPHILS,HEMOGLOBIN,IMMATURE GRANULOCYTES(IG),IMMATURE GRANULOCYTE PERCENTAGE(IG%)", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "DIABETES", "AVERAGE BLOOD GLUCOSE (ABG),HbA1c", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "ELECTROLYTES", "CHLORIDE,SODIUM", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "IRON DEFICIENCY", "TRANSFERRIN SATURATION,FERRITIN,IRON,TOTAL IRON BINDING CAPACITY (TIBC)", true, false, 2, 'OtherCitys','150');
+
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "LIPID", "TOTAL CHOLESTEROL,HDL CHOLESTEROL - DIRECT,LDL CHOLESTEROL - DIRECT,LDL / HDL RATIO,NON-HDL CHOLESTEROL,TC/ HDL CHOLESTEROL RATIO,TRIGLYCERIDES,VLDL CHOLESTEROL", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "LIVER", "SERUM ALBUMIN/GLOBULIN RATIO,ALKALINE PHOSPHATASE,BILIRUBIN -DIRECT,BILIRUBIN (INDIRECT),BILIRUBIN - TOTAL,GAMMA GLUTAMYL TRANSFERASE (GGT),PROTEIN - TOTAL,ALBUMIN - SERUM,SERUM GLOBULIN,ASPARTATE AMINOTRANSFERASE (SGOT ),ALANINE TRANSAMINASE (SGPT)", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "RENAL", "BUN / Sr.CREATININE RATIO,BLOOD UREA NITROGEN (BUN),CALCIUM,CREATININE - SERUM,URIC ACID", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "THYROID", "TOTAL TRIIODOTHYRONINE (T3),TOTAL THYROXINE (T4),THYROID STIMULATING HORMONE (TSH)", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "TOXIC ELEMENTS", "ARSENIC,BARIUM,CADMIUM,COBALT,CHROMIUM,CAESIUM,MERCURY,LEAD,SELENIUM", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "VITAMIN", "FOLIC ACID,VITAMIN B-12,25-OH VITAMIN D (TOTAL)", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Superpackage", 20, 50, 30, 60, "WELLNESS", "AMYLASE,LIPASE", true, false, 2, 'OtherCitys','150');
+
+
+
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "ARTHRITIS", "ANTI CCP (ACCP),ANTI NUCLEAR ANTIBODIES (ANA)", true, false, 2, 'OtherCitys','150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "CARDIAC RISK MARKERS", "APO B / APO A1 RATIO (Apo B/A1),APOLIPOPROTEIN - A1 (APO-A1),APOLIPOPROTEIN - B (APO-B),HIGH SENSITIVITY C-REACTIVE PROTEIN (hs- CRP),HOMOCYSTEINE,LIPOPROTEIN (A) [LP(A)]", true, false, 2, 'OtherCitys','$150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "COMPLETE HEMOGRAM", "BASOPHILS - ABSOLUTE COUNT,EOSINOPHILS - ABSOLUTE COUNT,LYMPHOCYTES - ABSOLUTE COUNT,MONOCYTES - ABSOLUTE COUNT,NEUTROPHILS - ABSOLUTE COUNT,BASOPHILS,EOSINOPHILS,HEMOGLOBIN,IMMATURE GRANULOCYTE PERCENTAGE(IG%),", true, false, 2, 'OtherCitys','$150');
+
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "DIABETES", "AVERAGE BLOOD GLUCOSE (ABG),HbA1c", true, false, 2, 'OtherCitys','$150');
+
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "ELECTROLYTES", "CHLORIDE,SODIUM", true, false, 2, 'OtherCitys','$150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "IRON DEFICIENCY", "TRANSFERRIN SATURATION,FERRITIN,IRON,TOTAL IRON BINDING CAPACITY (TIBC)", true, false, 2, 'OtherCitys','$150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "LIPID", "TOTAL CHOLESTEROL,HDL CHOLESTEROL - DIRECT,LDL CHOLESTEROL - DIRECT,LDL / HDL RATIO,NON-HDL CHOLESTEROL,TC/ HDL CHOLESTEROL RATIO,TRIGLYCERIDES,VLDL CHOLESTEROL", true, false, 2, 'OtherCitys','$150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "LIVER", "SERUM ALBUMIN/GLOBULIN RATIO,ALKALINE PHOSPHATASE,BILIRUBIN -DIRECT,BILIRUBIN (INDIRECT),BILIRUBIN - TOTAL,GAMMA GLUTAMYL TRANSFERASE (GGT),PROTEIN - TOTAL,ALBUMIN - SERUM,SERUM GLOBULIN,ASPARTATE AMINOTRANSFERASE (SGOT ),ALANINE TRANSAMINASE (SGPT)", true, false, 2, 'OtherCitys','$150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "RENAL", "BUN / Sr.CREATININE RATIO,BLOOD UREA NITROGEN (BUN),CALCIUM,CREATININE - SERUM,URIC ACID", true, false, 2, 'OtherCitys', '$150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name, Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "THYROID", "BUN / Sr.CREATINITOTAL TRIIODOTHYRONINE (T3),TOTAL THYROXINE (T4),THYROID STIMULATING HORMONE (TSH)", true, false, 2, 'OtherCitys', '$150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "TOXIC ELEMENTS", "ARSENIC,BARIUM,CADMIUM,COBALT,CHROMIUM,CAESIUM,MERCURY,LEAD,SELENIUM", true, false, 2, 'OtherCitys','$150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, 
+Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "VITAMIN", "FOLIC ACID,VITAMIN B-12,25-OH VITAMIN D (TOTAL)", true, false, 2, 'OtherCitys','$150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, 
+Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "WELLNESS", "AMYLASE,LIPASE", true, false, 2, 'OtherCitys', '$150');
+
+INSERT INTO checkthat_package(Package_ID, Package_Name, Indian_Price, Usa_Price, Aus_Price, Candan_Price, Test_name, 
+Sub_Details, Sample_Flag, Inperson_Flag, City_Flag, City_Name,Package_Price) VALUES(1, "Womenpackage", 20, 50, 30, 60, "INFERTILITY", "PROLACTIN(PRL)", true, false, 2, 'OtherCitys', '$150');
