@@ -1,0 +1,11 @@
+scp -i checkthat.pem  /Users/502535162/Documents/ravi/projects/ct/src/checkthat/public/views/home.html ubuntu@ec2-52-35-34-148.us-west-2.compute.amazonaws.com:/usr/src/checkthat/public/views/ 
+
+
+
+scp -i checkthat.pem  /Users/502535162/Documents/ravi/projects/ct/src/checkthat/public/views/login.html ubuntu@ec2-52-35-34-148.us-west-2.compute.amazonaws.com:/usr/src/
+
+
+scp -i checkthat.pem  /Users/502535162/Documents/ravi/projects/ct/src/checkthat/public/views/services.html ubuntu@ec2-52-35-34-148.us-west-2.compute.amazonaws.com:/usr/src/
+
+
+scp -i checkthat.pem  /Users/502535162/Documents/ravi/projects/ct/src/checkthat/public/views/signup.html ubuntu@ec2-52-35-34-148.us-west-2.compute.amazonaws.com:/usr/src/

@@ -18,6 +18,13 @@ function util(sql){
 	this.saveToken = function(){
 	}
 
+	this.updateuser = function(data, callback){
+		var query = sql.connection.query('UPDATE userinfo SET ? WHERE ?', 
+		[{email:data.email,firstname:data.firstname,lastname:data.lastname,mobile:data.mobile}, {email:data.email}], function(err, result){
+				callback(err, result);
+			})
+	}
+
 	this.getUserData = function(data, callback){
 		var query = sql.connection.query('SELECT * FROM userinfo WHERE email=?', data.email, function(err, result) {
 		  	// Neat!
@@ -64,6 +71,55 @@ function util(sql){
 		  		callback(err, result);
 		  	}
 		});	
+	}
+
+	this.createpatientRec = function(data, callback)
+	{
+		var query = sql.connection.query('INSERT INTO checkthat_patient_tbl SET ?', data, function(err, result) {
+		  	// Neat!
+		  	callback(err, result);
+		});
+		console.log(query.sql);
+	}
+
+	this.createserviceRec = function(data, callback)
+	{
+		var query = sql.connection.query('INSERT INTO checkthat_serviceinfo_tbl SET ?', data, function(err, result) {
+		  	// Neat!
+		  	callback(err, result);
+		});
+		console.log(query.sql);
+	}
+
+	this.createsalesRec = function(data, callback)
+	{
+		var query = sql.connection.query('INSERT INTO checkthat_salesinfo_tbl SET ?', data, function(err, result) {
+		  	// Neat!
+		  	callback(err, result);
+		});
+		console.log(query.sql);
+	}
+
+
+	this.getPatientRec = function(sqlquery, user_id, callback){
+		var query = sql.connection.query(sqlquery, user_id, function(err, result){
+			// Neat!
+		  	if(err){
+		  		callback(err, null);	
+		  	}
+		  	else if(result.length >= 0){
+		  		callback(err, result);
+		  	}
+		});
+	}
+
+	this.createServiceRec = function(data, callback)
+	{
+		var query = sql.connection.query('INSERT INTO checkthat_serviceinfo_tbl SET ?', data, function(err, result) {
+		  	// Neat!
+		  	callback(err, result);
+		});
+		console.log(query.sql);
 	}
 
 	this.verifyToken = function(token, callback){
